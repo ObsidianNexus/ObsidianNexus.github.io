@@ -2,16 +2,190 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Zeth Morket</title>
+  <title>Obsidian Nexus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #e0e0e0;
+      --accent: #8b0000;
+      --metal: #9fa3a6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #121212, #050505);
+      color: var(--fg);
+      font-family: 'Crimson Text', serif;
+      line-height: 1.7;
+      padding: 4rem 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.25em;
+      font-size: 2.6rem;
+      color: var(--metal);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    .sigil {
+      margin: 2.5rem auto;
+      max-width: 320px;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section.manifesto {
+      margin-bottom: 5rem;
+    }
+
+    section.manifesto p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    section.manifesto strong {
+      color: var(--metal);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project {
+      border: 1px solid #222;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      background: linear-gradient(145deg, #0b0b0b, #0f0f0f);
+    }
+
+    .project:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .project h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+      color: var(--metal);
+    }
+
+    .project p {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .project a {
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.9rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .project a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 6rem;
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+  </style>
 </head>
 <body>
-  <h1>Zeth Morket</h1>
-  <ul>
-    <li><a href="/obsidian-nexus/">Obsidian Nexus</a></li>
-    <li><a href="/lux-inversa/">Lux Inversa</a></li>
-    <li><a href="/saraknyal/">Saraknyal</a></li>
-    <li><a href="/zeth-morket/">Zeth Morket</a></li>
-    <li><a href="/Cantus-Alarum-Nigrarum/">Cantus Alarum Nigrarum</a></li>
-  </ul>
+
+  <header>
+    <h1>OBSIDIAN NEXUS</h1>
+    <p>Archivo central de las obras de Zeth Morket</p>
+
+    <!-- Reemplaza el src por la ruta de tu logo -->
+    <img class="sigil" src="/assets/zeth-morket-logo.png" alt="Sigilo de Zeth Morket">
+  </header>
+
+  <main>
+
+    <section class="manifesto">
+      <p><strong>Obsidian Nexus no es un sitio.</strong> Es un punto de convergencia. Un archivo donde la creación no busca aprobación, sino permanencia.</p>
+
+      <p>La obra no nace del ruido ni del exceso, sino del conflicto interno, de la contemplación de aquello que incomoda, de lo que se arrastra bajo la superficie de la conciencia.</p>
+
+      <p>Aquí convergen múltiples formas de expresión, no como proyectos aislados, sino como fragmentos de una misma voluntad creadora.</p>
+
+      <p><strong>Lux Inversa</strong> es el silencio, la vastedad, la negación de la luz como dogma.</p>
+      <p><strong>Saraknyal</strong> es la guerra, la exaltación de la caída, la sinfonía del colapso espiritual.</p>
+      <p><strong>Zeth Morket</strong> es la distorsión contemporánea, la fusión del pulso mecánico con la agresión orgánica.</p>
+
+      <p>El Universo de Fantasía Oscura no es evasión, sino espejo: una mitología nacida de la misma raíz que da forma al sonido.</p>
+
+      <p>No hay personajes aquí. No hay máscaras ajenas. Solo un alias que contiene todas las formas posibles.</p>
+
+      <p><strong>Zeth Morket.</strong></p>
+    </section>
+
+    <section class="projects">
+      <div class="project">
+        <h2>Lux Inversa</h2>
+        <p>Atmospheric Black Metal</p>
+        <a href="/lux-inversa/">Entrar</a>
+      </div>
+
+      <div class="project">
+        <h2>Saraknyal</h2>
+        <p>Symphonic Blackened Death Metal</p>
+        <a href="/saraknyal/">Entrar</a>
+      </div>
+
+      <div class="project">
+        <h2>Zeth Morket</h2>
+        <p>Alternative Dubstep Metal</p>
+        <a href="/zeth-morket/">Entrar</a>
+      </div>
+
+      <div class="project">
+        <h2>Fantasía Oscura</h2>
+        <p>Universo narrativo</p>
+        <a href="/dark-fantasy/">Entrar</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© Zeth Morket — Obsidian Nexus</p>
+  </footer>
+
 </body>
 </html>
