@@ -2,10 +2,144 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Obsidian Nexus</title>
+  <title>Lux Inversa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #020202;
+      --fg: #e6e6e6;
+      --muted: #8a8a8a;
+      --line: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background:
+        radial-gradient(circle at 50% -20%, #111, var(--bg) 70%);
+      color: var(--fg);
+      font-family: 'Crimson Text', serif;
+      min-height: 100vh;
+      padding: 6rem 1.5rem;
+      animation: breath 30s ease-in-out infinite;
+    }
+
+    @keyframes breath {
+      0%,100% { background-position: 50% 0; }
+      50% { background-position: 50% 20px; }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      letter-spacing: 0.45em;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    header p {
+      margin-top: 1.2rem;
+      font-style: italic;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--line);
+    }
+
+    section p {
+      margin-bottom: 1.6rem;
+      line-height: 1.9;
+    }
+
+    .nav {
+      margin-top: 5rem;
+    }
+
+    .nav a {
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      border-bottom: 1px solid transparent;
+      transition: all 0.4s ease;
+    }
+
+    .nav a:hover {
+      border-color: var(--fg);
+    }
+
+    footer {
+      margin-top: 8rem;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      opacity: 0.35;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>OBSIDIAN NEXUS</h1>
-  <p>Archivo central de las obras de Zeth Morket</p>
+
+  <header>
+    <h1>LUX INVERSA</h1>
+    <p>Atmospheric Black Metal · One Man Band</p>
+  </header>
+
+  <main>
+
+    <section>
+      <p>
+        Lux Inversa no busca imponerse.<br>
+        No busca redención ni trascendencia.
+      </p>
+
+      <p>
+        Es contemplación del vacío,<br>
+        la aceptación de lo irreversible,<br>
+        y la belleza que existe cuando todo lo demás ha callado.
+      </p>
+    </section>
+
+    <section>
+      <p>
+        Compuesto, interpretado y producido en soledad.
+      </p>
+    </section>
+
+    <div class="nav">
+      <a href="../index.html">REGRESAR AL NEXUS</a>
+    </div>
+
+  </main>
+
+  <footer>
+    LUX INVERSA · OBISIDAN NEXUS
+  </footer>
+
 </body>
 </html>
