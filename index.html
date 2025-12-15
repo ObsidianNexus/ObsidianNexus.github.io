@@ -10,11 +10,12 @@
 
   <style>
     :root {
-      --bg: #070707;
-      --fg: #e6e6e6;
-      --accent: #7a0000;
-      --metal-light: #b5b8bb;
-      --metal-dark: #4e5154;
+      --bg: #050505;
+      --fg: #e8e8e8;
+      --accent: #8b0000;
+      --metal-light: #c7c9cc;
+      --metal-dark: #4a4d50;
+      --glow: rgba(139,0,0,0.45);
     }
 
     * {
@@ -25,104 +26,152 @@
 
     body {
       background:
-        radial-gradient(circle at top, #141414, #050505 70%),
+        radial-gradient(circle at 50% -10%, #1a1a1a, #050505 65%),
+        linear-gradient(120deg, rgba(139,0,0,0.05), transparent 60%),
         repeating-linear-gradient(
           45deg,
-          rgba(255,255,255,0.015),
-          rgba(255,255,255,0.015) 1px,
+          rgba(255,255,255,0.02),
+          rgba(255,255,255,0.02) 1px,
           transparent 1px,
-          transparent 6px
+          transparent 8px
         );
       color: var(--fg);
       font-family: 'Crimson Text', serif;
       line-height: 1.75;
-      padding: 4.5rem 1.5rem;
+      padding: 5rem 1.5rem;
+      animation: backgroundShift 40s linear infinite;
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0 0, 0 0, 0 0; }
+      100% { background-position: 400px 0, -200px 0, 200px 0; }
     }
 
     header {
       text-align: center;
-      margin-bottom: 5rem;
+      margin-bottom: 6rem;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      display: block;
+      width: 120px;
+      height: 2px;
+      margin: 2.5rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.6;
     }
 
     header h1 {
       font-family: 'Cinzel', serif;
-      letter-spacing: 0.35em;
-      font-size: 2.8rem;
+      letter-spacing: 0.45em;
+      font-size: 3rem;
       background: linear-gradient(180deg, var(--metal-light), var(--metal-dark));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1.2rem;
+      text-shadow: 0 0 25px rgba(0,0,0,0.9);
+      animation: titleReveal 2.5s ease-out forwards;
+    }
+
+    @keyframes titleReveal {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     header p {
       font-style: italic;
       opacity: 0.75;
+      margin-top: 1rem;
     }
 
     .sigil {
-      margin: 3rem auto;
-      max-width: 300px;
-      filter: drop-shadow(0 0 12px rgba(0,0,0,0.8));
+      margin: 3.5rem auto;
+      max-width: 320px;
+      filter:
+        drop-shadow(0 0 18px rgba(0,0,0,0.9))
+        drop-shadow(0 0 35px var(--glow));
+      animation: sigilFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes sigilFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     main {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
     }
 
     section.manifesto {
-      margin-bottom: 6rem;
-      border-left: 1px solid #222;
-      padding-left: 1.5rem;
+      margin-bottom: 7rem;
+      padding-left: 2rem;
+      border-left: 1px solid rgba(255,255,255,0.12);
+      position: relative;
+    }
+
+    section.manifesto::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--accent), transparent);
+      opacity: 0.5;
     }
 
     section.manifesto p {
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.6rem;
       text-align: justify;
     }
 
     section.manifesto strong {
       color: var(--metal-light);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
     }
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.7rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
     }
 
     .project {
-      border: 1px solid #1c1c1c;
-      padding: 1.8rem 1.5rem;
+      position: relative;
+      padding: 2.2rem 1.8rem;
       text-align: center;
       background:
-        linear-gradient(145deg, #0b0b0b, #101010);
-      transition: all 0.35s ease;
-      position: relative;
+        linear-gradient(160deg, #0b0b0b, #141414);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.4s ease;
+      overflow: hidden;
     }
 
     .project::before {
       content: "";
       position: absolute;
       inset: 0;
-      border: 1px solid transparent;
-      transition: border-color 0.35s ease;
+      background: radial-gradient(circle at top, rgba(139,0,0,0.25), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
     .project:hover::before {
-      border-color: var(--accent);
+      opacity: 1;
     }
 
     .project:hover {
-      transform: translateY(-6px);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
     }
 
     .project h2 {
       font-family: 'Cinzel', serif;
-      font-size: 1.25rem;
-      letter-spacing: 0.18em;
-      margin-bottom: 0.6rem;
+      font-size: 1.3rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.7rem;
       background: linear-gradient(180deg, var(--metal-light), var(--metal-dark));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -131,29 +180,33 @@
     .project p {
       font-size: 0.95rem;
       opacity: 0.75;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.6rem;
     }
 
     .project a {
+      display: inline-block;
+      padding: 0.6rem 1.8rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
       text-decoration: none;
       color: var(--fg);
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 0.2rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: linear-gradient(180deg, #111, #060606);
+      transition: all 0.35s ease;
     }
 
     .project a:hover {
-      border-color: var(--accent);
       color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 20px var(--glow);
     }
 
     footer {
-      margin-top: 7rem;
+      margin-top: 8rem;
       text-align: center;
       font-size: 0.75rem;
       opacity: 0.45;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
     }
   </style>
 </head>
