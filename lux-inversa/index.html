@@ -2,327 +2,159 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Obsidian Nexus</title>
+  <title>Lux Inversa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-deep: #020202;
-      --bg-mid: #0b0b0b;
-      --fg: #f0f0f0;
-      --accent: #9b0000;
-      --accent-glow: rgba(155,0,0,0.55);
-      --metal-bright: #d6d8db;
-      --metal-dark: #3f4246;
+      --fg: #e5e5e5;
+      --muted: #9a9a9a;
+      --shadow: rgba(0,0,0,0.85);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background:
-        radial-gradient(circle at 50% -20%, #1f1f1f, var(--bg-deep) 65%),
-        radial-gradient(circle at 10% 120%, rgba(155,0,0,0.15), transparent 60%),
-        radial-gradient(circle at 90% 120%, rgba(155,0,0,0.12), transparent 65%),
-        repeating-linear-gradient(
-          45deg,
-          rgba(255,255,255,0.025),
-          rgba(255,255,255,0.025) 1px,
-          transparent 1px,
-          transparent 10px
-        );
-      background-attachment: fixed;
-      color: var(--fg);
+      min-height: 100vh;
       font-family: 'Crimson Text', serif;
-      line-height: 1.8;
-      padding: 6rem 1.5rem;
-      animation: voidDrift 60s linear infinite;
-    }
-
-    @keyframes voidDrift {
-      0% { background-position: 0 0, 0 0, 0 0, 0 0; }
-      100% { background-position: 600px 0, -400px 0, 400px 0, 300px 0; }
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 7rem;
-      position: relative;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(155,0,0,0.18), transparent 70%);
-      filter: blur(40px);
-      z-index: -1;
-    }
-
-    header h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 3.4rem;
-      letter-spacing: 0.55em;
-      background: linear-gradient(180deg, var(--metal-bright), var(--metal-dark));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow:
-        0 0 30px rgba(0,0,0,0.9),
-        0 0 60px rgba(0,0,0,0.6);
-      animation: ascend 3s ease-out forwards;
-    }
-
-    @keyframes ascend {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    header p {
-      margin-top: 1.4rem;
-      font-style: italic;
-      opacity: 0.8;
-      letter-spacing: 0.12em;
-    }
-
-    .sigil {
-      margin: 4rem auto;
-      max-width: 360px;
-      filter:
-        drop-shadow(0 0 20px rgba(0,0,0,0.9))
-        drop-shadow(0 0 60px var(--accent-glow));
-      animation: sigilLevitates 10s ease-in-out infinite;
-    }
-
-    @keyframes sigilLevitates {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-14px); }
-    }
-
-    main { max-width: 1020px; margin: 0 auto; }
-
-    section.manifesto {
-      margin-bottom: 9rem;
-      padding: 0 2.5rem;
-      position: relative;
-    }
-
-    section.manifesto::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: -40px;
-      transform: translateX(-50%);
-      width: 2px;
-      height: calc(100% + 80px);
-      background: linear-gradient(180deg, transparent, var(--accent), transparent);
-      opacity: 0.6;
-    }
-
-    section.manifesto p {
-      margin-bottom: 1.8rem;
-      text-align: justify;
-      position: relative;
-      z-index: 1;
-    }
-
-    section.manifesto strong {
-      color: var(--metal-bright);
-      letter-spacing: 0.1em;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .project {
-      position: relative;
-      padding: 2.8rem 2rem;
-      text-align: center;
-      background:
-        linear-gradient(160deg, #0c0c0c, #1a1a1a);
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: all 0.5s ease;
-      overflow: hidden;
-    }
-
-    .project::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top, rgba(155,0,0,0.35), transparent 65%);
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    .project::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid transparent;
-      transition: border-color 0.5s ease;
-    }
-
-    .project:hover::before { opacity: 1; }
-
-    .project:hover::after { border-color: var(--accent); }
-
-    .project:hover {
-      transform: translateY(-16px) scale(1.02);
-      box-shadow:
-        0 30px 70px rgba(0,0,0,0.85),
-        0 0 40px var(--accent-glow);
-    }
-
-    .project h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.45rem;
-      letter-spacing: 0.25em;
-      margin-bottom: 0.9rem;
-      background: linear-gradient(180deg, var(--metal-bright), var(--metal-dark));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .project p {
-      font-size: 0.95rem;
-      opacity: 0.8;
-      margin-bottom: 2rem;
-    }
-
-    .project a {
-      display: inline-block;
-      padding: 0.7rem 2.4rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      text-decoration: none;
       color: var(--fg);
-      border: 1px solid rgba(255,255,255,0.3);
       background:
-        linear-gradient(180deg, #141414, #070707);
-      transition: all 0.4s ease;
-      position: relative;
-      z-index: 1;
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)),
+        url('../assets/dead-forest.jpg') center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
     }
 
-    .project a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      box-shadow: 0 0 30px var(--accent-glow);
-    }
-
-    footer {
-      margin-top: 10rem;
-      text-align: center;
-      font-size: 0.75rem;
-      opacity: 0.45;
-      letter-spacing: 0.18em;
-    }
-      
-    /* --- CAPAS ATMOSFÉRICAS ADICIONALES --- */
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent 60%),
-        repeating-linear-gradient(
-          0deg,
-          rgba(255,255,255,0.015),
-          rgba(255,255,255,0.015) 1px,
-          transparent 1px,
-          transparent 4px
-        );
-      pointer-events: none;
-      animation: fogDrift 90s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes fogDrift {
-      from { transform: translateY(0); }
-      to { transform: translateY(-120px); }
-    }
-
+    /* Capa de grano */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.03"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.04"/></svg>');
       pointer-events: none;
-      z-index: -1;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      backdrop-filter: blur(2px);
+    }
+
+    .logo {
+      margin-bottom: 4rem;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .logo img {
+      max-width: 280px;
+      width: 100%;
+      filter: drop-shadow(0 0 25px var(--shadow));
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.4rem;
+      letter-spacing: 0.45em;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 30px var(--shadow);
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 1s;
+    }
+
+    p.tagline {
+      font-style: italic;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      margin-bottom: 4rem;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 2s;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      line-height: 1.9;
+      text-shadow: 0 0 20px var(--shadow);
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 3s;
+    }
+
+    nav {
+      margin-top: 5rem;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 4s;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      border-bottom: 1px solid transparent;
+      transition: all 0.4s ease;
+    }
+
+    nav a:hover {
+      border-color: var(--fg);
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    footer {
+      margin-top: 6rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      opacity: 0.35;
     }
   </style>
 </head>
+
 <body>
-
-  <header>
-    <h1>OBSIDIAN NEXUS</h1>
-    <p>Archivo central de las obras de Zeth Morket</p>
-
-    <!-- Reemplaza el src por la ruta de tu logo -->
-    <img class="sigil" src="/assets/zeth-morket-logo.png" alt="Sigilo de Zeth Morket">
-  </header>
 
   <main>
 
-    <section class="manifesto">
-      <p><strong>Obsidian Nexus no es un sitio.</strong> Es un punto de convergencia. Un archivo donde la creación no busca aprobación, sino permanencia.</p>
+    <div class="logo">
+      <!-- Coloca aquí el logo de Lux Inversa -->
+      <!-- ../assets/lux-inversa-logo.png -->
+      <img src="../assets/lux-inversa-logo.png" alt="Lux Inversa logo">
+    </div>
 
-      <p>La obra no nace del ruido ni del exceso, sino del conflicto interno, de la contemplación de aquello que incomoda, de lo que se arrastra bajo la superficie de la conciencia.</p>
+    <h1>LUX INVERSA</h1>
+    <p class="tagline">Atmospheric Black Metal · One Man Band</p>
 
-      <p>Aquí convergen múltiples formas de expresión, no como proyectos aislados, sino como fragmentos de una misma voluntad creadora.</p>
-
-      <p><strong>Lux Inversa</strong> es el silencio, la vastedad, la negación de la luz como dogma.</p>
-      <p><strong>Saraknyal</strong> es la guerra, la exaltación de la caída, la sinfonía del colapso espiritual.</p>
-      <p><strong>Zeth Morket</strong> es la distorsión contemporánea, la fusión del pulso mecánico con la agresión orgánica.</p>
-
-      <p>El Universo de Fantasía Oscura no es evasión, sino espejo: una mitología nacida de la misma raíz que da forma al sonido.</p>
-
-      <p>No hay personajes aquí. No hay máscaras ajenas. Solo un alias que contiene todas las formas posibles.</p>
-
-      <p><strong>Zeth Morket.</strong></p>
+    <section>
+      <p>
+        En el silencio del bosque muerto,<br>
+        donde la luz no alcanza a nombrar las formas,
+        surge Lux Inversa.
+      </p>
+      <p>
+        Música concebida en aislamiento,<br>
+        como eco de ruinas interiores<br>
+        y paisajes donde el tiempo ha sido negado.
+      </p>
     </section>
 
-    <section class="projects">
-      <div class="project">
-        <h2>Lux Inversa</h2>
-        <p>Atmospheric Black Metal</p>
-        <a href="/lux-inversa/">Entrar</a>
-      </div>
+    <nav>
+      <a href="../index.html">REGRESAR AL NEXUS</a>
+    </nav>
 
-      <div class="project">
-        <h2>Saraknyal</h2>
-        <p>Symphonic Blackened Death Metal</p>
-        <a href="/saraknyal/">Entrar</a>
-      </div>
-
-      <div class="project">
-        <h2>Zeth Morket</h2>
-        <p>Alternative Dubstep Metal</p>
-        <a href="/zeth-morket/">Entrar</a>
-      </div>
-
-      <div class="project">
-        <h2>Fantasía Oscura</h2>
-        <p>Universo narrativo</p>
-        <a href="/dark-fantasy/">Entrar</a>
-      </div>
-    </section>
+    <footer>
+      LUX INVERSA · OBSIDIAN NEXUS
+    </footer>
 
   </main>
-
-  <footer>
-    <p>© Zeth Morket — Obsidian Nexus</p>
-  </footer>
 
 </body>
 </html>
