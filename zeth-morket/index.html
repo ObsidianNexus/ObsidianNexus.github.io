@@ -1,40 +1,45 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Zeth Morket</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Fuente limpia e introspectiva -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #050607;
+      --bg: #020304;
       --fg: #e6e6e6;
-      --muted: #9a9a9a;
-      --neon: #6affff; /* cian introspectivo */
-      --shadow: rgba(0,0,0,0.9);
+      --muted: #9aa0a6;
+      --neon: #6affff; /* cian frío */
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 50% 20%, rgba(106,255,255,0.12), transparent 45%),
-        linear-gradient(180deg, #020304, var(--bg));
-      color: var(--fg);
       font-family: 'Inter', sans-serif;
+      color: var(--fg);
+      background:
+        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.9)),
+        url("../assets/zeth-morket/zeth-morket-bg.jpg")
+        center / cover no-repeat fixed;
       padding: 6rem 1.5rem;
       overflow-x: hidden;
     }
 
+    /* Grano digital sutil */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3"/></filter><rect width="180" height="180" filter="url(%23n)" opacity="0.04"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3"/></filter><rect width="160" height="160" filter="url(%23n)" opacity="0.04"/></svg>');
       pointer-events: none;
       z-index: -1;
     }
@@ -44,28 +49,19 @@
       margin-bottom: 6rem;
     }
 
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--neon);
-      text-shadow:
-        0 0 15px rgba(106,255,255,0.4),
-        0 0 35px rgba(106,255,255,0.15);
-      animation: glow 6s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px rgba(106,255,255,0.25); }
-      to   { text-shadow: 0 0 30px rgba(106,255,255,0.5); }
+    .logo img {
+      max-width: 360px;
+      width: 100%;
+      filter:
+        drop-shadow(0 0 18px rgba(106,255,255,0.35))
+        drop-shadow(0 0 40px rgba(106,255,255,0.18));
     }
 
     header p {
-      margin-top: 1.8rem;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
       color: var(--muted);
-      letter-spacing: 0.18em;
-      font-size: 0.85rem;
     }
 
     main {
@@ -75,7 +71,7 @@
     }
 
     section {
-      margin-bottom: 5.5rem;
+      margin-bottom: 5rem;
       line-height: 1.9;
     }
 
@@ -94,8 +90,8 @@
       color: var(--fg);
       text-decoration: none;
       margin: 0 1rem;
-      position: relative;
       opacity: 0.85;
+      position: relative;
       transition: color 0.3s ease;
     }
 
@@ -126,44 +122,40 @@
       opacity: 0.35;
     }
   </style>
-
 </head>
 
 <body>
 
   <header>
-    <h1>ZETH MORKET</h1>
-    <p>Alternative · Dubstep · Metal</p>
+    <div class="logo">
+      <img src="../assets/zeth-morket/zeth-morket-logo.png" alt="Zeth Morket">
+    </div>
+    <p>ALTERNATIVE · DUBSTEP · METAL</p>
   </header>
 
   <main>
+    <section>
+      <p>
+        Ruido interno.<br>
+        Frecuencias emocionales.<br>
+        <strong>La distorsión también es introspección.</strong>
+      </p>
+    </section>
 
-```
-<section>
-  <p>
-    Identidad fragmentada.<br />
-    Ruido emocional.<br />
-    <strong>Distorsión como lenguaje.</strong>
-  </p>
-</section>
+    <section>
+      <p>
+        Electrónica oscura y peso metálico<br>
+        como lenguaje personal.
+      </p>
+    </section>
 
-<section>
-  <p>
-    Electrónica introspectiva colisionando con peso metálico.
-    No es evasión.<br />
-    Es confrontación interna.
-  </p>
-</section>
-
-<nav>
-  <a href="#">MÚSICA</a>
-  <a href="#">VISUALES</a>
-  <a href="#">MANIFIESTO</a>
-  <a href="#">CONTACTO</a>
-  <a href="../index.html">NEXUS</a>
-</nav>
-```
-
+    <nav>
+      <a href="#">MÚSICA</a>
+      <a href="#">VISUALES</a>
+      <a href="#">MANIFIESTO</a>
+      <a href="#">CONTACTO</a>
+      <a href="../index.html">NEXUS</a>
+    </nav>
   </main>
 
   <footer>
