@@ -1,11 +1,206 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Obsidian Nexus</title>
+  <title>Saraknyal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #020202;
+      --fg: #eaeaea;
+      --muted: #9b9b9b;
+      --blood: #7a0000;
+      --gold: #b89b5e;
+      --shadow: rgba(0,0,0,0.85);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Crimson Text', serif;
+      color: var(--fg);
+      background:
+        radial-gradient(circle at 50% -20%, #1a1a1a, var(--bg) 70%),
+        radial-gradient(circle at 20% 120%, rgba(122,0,0,0.25), transparent 60%),
+        radial-gradient(circle at 80% 120%, rgba(184,155,94,0.15), transparent 65%);
+      padding: 6rem 1.5rem;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.04"/></svg>');
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 7rem;
+    }
+
+    .logo {
+      margin-bottom: 3.5rem;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .logo img {
+      max-width: 420px;
+      width: 100%;
+      filter:
+        drop-shadow(0 0 35px var(--shadow))
+        drop-shadow(0 0 60px rgba(122,0,0,0.35));
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      letter-spacing: 0.5em;
+      background: linear-gradient(180deg, var(--gold), #5e4b24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 40px var(--shadow);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 1s;
+    }
+
+    header p {
+      font-style: italic;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 6rem;
+      line-height: 1.9;
+      text-shadow: 0 0 25px var(--shadow);
+    }
+
+    section strong {
+      color: var(--gold);
+      letter-spacing: 0.12em;
+    }
+
+    nav {
+      margin: 6rem 0;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+    }
+
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      margin: 0 0.8rem;
+      border-bottom: 1px solid transparent;
+      transition: all 0.4s ease;
+    }
+
+    nav a:hover {
+      border-color: var(--blood);
+      color: var(--blood);
+    }
+
+    .sigil {
+      margin-top: 8rem;
+      opacity: 0.85;
+    }
+
+    .sigil img {
+      max-width: 260px;
+      width: 100%;
+      filter:
+        drop-shadow(0 0 30px var(--shadow))
+        drop-shadow(0 0 50px rgba(122,0,0,0.35));
+    }
+
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      opacity: 0.4;
+    }
+  </style>
+
 </head>
+
 <body>
-  <h1>OBSIDIAN NEXUS</h1>
-  <p>Archivo central de las obras de Zeth Morket</p>
+
+  <header>
+    <div class="logo">
+      <!-- assets/saraknyal-logo.png -->
+      <img src="../assets/saraknyal-logo.png" alt="Saraknyal logo">
+    </div>
+
+```
+<h1>SARAKNYAL</h1>
+<p>Symphonic Blackened Death Metal</p>
+```
+
+  </header>
+
+  <main>
+
+```
+<section>
+  <p>
+    Entre el estruendo de la guerra y la ascensión del espíritu,
+    Saraknyal se manifiesta como un imperio sonoro.
+  </p>
+  <p>
+    <strong>Blast beats</strong> y <strong>tremolo picking</strong> colisionan
+    con sinfonías majestuosas, evocando belleza etérea
+    en medio del caos absoluto.
+  </p>
+</section>
+
+<section>
+  <p>
+    No es solo violencia.<br>
+    Es propósito, legado y trascendencia.
+  </p>
+</section>
+
+<nav>
+  <a href="#">DISCOGRAFÍA</a>
+  <a href="#">LÍRICA</a>
+  <a href="#">VISUALES</a>
+  <a href="#">MANIFIESTO</a>
+  <a href="../index.html">NEXUS</a>
+</nav>
+
+<div class="sigil">
+  <!-- assets/saraknyal-sigil.png -->
+  <img src="../assets/saraknyal-sigil.png" alt="Saraknyal sigil">
+</div>
+```
+
+  </main>
+
+  <footer>
+    SARAKNYAL · OBSIDIAN NEXUS
+  </footer>
+
 </body>
 </html>
