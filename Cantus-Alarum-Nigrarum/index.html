@@ -1,11 +1,175 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Obsidian Nexus</title>
+  <meta charset="UTF-8" />
+  <title>Cantus Alarum Nigrarum</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tipografías solemnes -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050404;
+      --fg: #e6e2d8;
+      --muted: #9a948a;
+      --accent: #7b0f0f; /* rojo oscuro ritual */
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'EB Garamond', serif;
+      color: var(--fg);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.03), transparent 55%),
+        linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.96)),
+        #000;
+      padding: 6rem 1.5rem 4rem;
+      line-height: 1.85;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      animation: fadein 3s ease forwards;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.25em;
+      margin-bottom: 2rem;
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    header p {
+      font-style: italic;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    section.proemium {
+      margin-bottom: 5rem;
+      font-size: 1.05rem;
+    }
+
+    section.proemium p {
+      margin-bottom: 1.6rem;
+      text-align: justify;
+    }
+
+    nav {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      text-align: center;
+    }
+
+    nav a {
+      font-family: 'Cinzel', serif;
+      text-decoration: none;
+      color: var(--fg);
+      letter-spacing: 0.22em;
+      font-size: 0.8rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.35s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    nav a:hover::after { opacity: 1; }
+
+    nav a:hover {
+      color: var(--accent);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    footer {
+      margin-top: 6rem;
+      text-align: center;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      opacity: 0.3;
+    }
+  </style>
+
 </head>
+
 <body>
-  <h1>OBSIDIAN NEXUS</h1>
-  <p>Archivo central de las obras de Zeth Morket</p>
+
+  <div class="container">
+
+```
+<header>
+  <h1>CANTUS <span>ALARUM</span> NIGRARUM</h1>
+  <p>
+    Donde las campanas no anuncian salvación,
+    sino el recuerdo de aquello que nunca debió ser nombrado.
+  </p>
+</header>
+
+<section class="proemium">
+  <p>
+    Este compendio no fue escrito para ser comprendido, sino para ser soportado.
+    Cada palabra que yace en estas páginas es eco de una verdad fragmentada,
+    arrancada del silencio a un precio que no puede ser restituido.
+  </p>
+  <p>
+    Quien avance más allá de este umbral deberá aceptar que el conocimiento
+    aquí contenido no ofrece consuelo, ni redención. Solo persistencia.
+    Solo memoria.
+  </p>
+  <p>
+    Las crónicas, cantos y símbolos reunidos bajo el nombre de
+    <em>Cantus Alarum Nigrarum</em> no siguen una línea temporal ni moral.
+    Son restos. Vestigios. Campanadas negras resonando a través de mundos
+    ya condenados.
+  </p>
+</section>
+
+<nav>
+  <a href="cronicas/index.html">CRÓNICAS</a>
+  <a href="cantos/index.html">CANTOS</a>
+  <a href="bestiarium/index.html">BESTIARIUM</a>
+  <a href="cosmologia/index.html">COSMOLOGÍA</a>
+  <a href="sigilos/index.html">SIGILOS</a>
+  <a href="../index.html">NEXUS</a>
+</nav>
+
+<footer>
+  CANTUS ALARUM NIGRARUM
+</footer>
+```
+
+  </div>
+
 </body>
 </html>
