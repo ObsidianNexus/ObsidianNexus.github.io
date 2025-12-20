@@ -1,142 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cantus Alarum Nigrarum</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Cantus Alarum Nigrarum</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fuente ceremonial -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<!-- Tipografía ceremonial -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Cinzel', serif;
-      color: #d6c08a;
-      background: url("assets/cantus-bg.jpg") no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-    }
+/* BASE */
+body {
+  font-family: 'Cinzel', serif;
+  color: #d6c08a;
+  background: url("assets/cantus-bg.jpg") center center fixed no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    /* Oscurecimiento ritual */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      z-index: -1;
-    }
+/* Velo oscuro */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+}
 
-    /* HERO */
-    .cantus-hero {
-      padding: 80px 20px 40px;
-    }
+/* CABECERA */
+header {
+  padding: 70px 20px 40px;
+  text-align: center;
+}
 
-    .cantus-logo {
-      max-width: 420px;
-      width: 90%;
-      opacity: 0;
-      animation: fadeIn 3s ease forwards;
-    }
+header img {
+  max-width: 420px;
+  width: 90%;
+  animation: fadeIn 3s ease forwards;
+}
 
-    /* MANIFIESTO */
-    .cantus-manifest {
-      max-width: 700px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #c9b784;
-      animation: fadeIn 4s ease forwards;
-    }
+/* MANIFIESTO */
+.manifest {
+  max-width: 780px;
+  margin: 0 auto 70px;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  text-align: center;
+  color: #c9b784;
+  animation: fadeIn 4s ease forwards;
+}
 
-    /* SECCIONES */
-    .cantus-sections {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-bottom: 60px;
-    }
+/* SECCIONES */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 70px;
+}
 
-    .cantus-button {
-      width: 260px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      font-size: 1rem;
-      letter-spacing: 2px;
-      color: #d6c08a;
-      border: 1px solid #6b5a2e;
-      background: rgba(0,0,0,0.6);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-    }
+/* BOTONES RITUALES */
+.sections a {
+  width: 280px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  color: #d6c08a;
+  text-decoration: none;
+  background: rgba(0,0,0,0.65);
+  border: 1px solid #6b5a2e;
+  position: relative;
+  transition: all 0.35s ease;
+}
 
-    .cantus-button::before,
-    .cantus-button::after {
-      content: "";
-      position: absolute;
-      inset: 3px;
-      border: 1px solid rgba(214,192,138,0.15);
-      pointer-events: none;
-    }
+.sections a::before,
+.sections a::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(214,192,138,0.18);
+  pointer-events: none;
+}
 
-    .cantus-button:hover {
-      background: rgba(214,192,138,0.12);
-      box-shadow: 0 0 18px rgba(214,192,138,0.35);
-    }
+.sections a:hover {
+  background: rgba(214,192,138,0.12);
+  box-shadow: 0 0 22px rgba(214,192,138,0.35);
+}
 
-    /* FOOTER */
-    .cantus-warning {
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      padding: 20px;
-      color: #8a7a4a;
-      opacity: 0.8;
-    }
+/* DESCRIPCIÓN INFERIOR */
+.lore-note {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #9f8f5e;
+  opacity: 0.85;
+}
 
-    /* ANIMACIONES */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+/* FOOTER */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  color: #8a7a4a;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .cantus-logo {
-        max-width: 300px;
-      }
-    }
-  </style>
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  header img {
+    max-width: 300px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- PORTADA -->
-  <header class="cantus-hero">
-    <img src="assets/logo-cantus.png" alt="Cantus Alarum Nigrarum" class="cantus-logo">
-  </header>
+<!-- CABECERA -->
+<header>
+  <img src="assets/logo-cantus.png" alt="Cantus Alarum Nigrarum">
+</header>
 
-  <!-- MANIFIESTO -->
-  <section class="cantus-manifest">
-    <p>
-      Cantus Alarum Nigrarum no es una historia.<br>
-      Es un eco.<br><br>
-      Un registro de aquello que fue negado por dioses y hombres,
-      de nombres borrados,
-      de destinos que no pidieron existir
-      y aun así persisten.
-    </p>
-  </section>
+<!-- MANIFIESTO CENTRAL -->
+<section class="manifest">
+  <p>
+    <strong>Cantus Alarum Nigrarum</strong> no es una historia narrada para ser comprendida.<br>
+    Es un registro de lo prohibido.<br><br>
+    Aquí se preservan nombres condenados al olvido, linajes rotos,
+    guerras silenciadas y entidades que nunca debieron ser invocadas,
+    pero cuya existencia dejó cicatrices en la creación.
+  </p>
+</section>
 
-  <!-- GRIMORIO -->
-  <section class="cantus
+<!-- ACCESOS CANÓNICOS -->
+<section class="sections">
+  <a href="cosmologia.html">COSMOLOGÍA</a>
+  <a href="cronologia.html">CRONOLOGÍA</a>
+  <a href="personajes.html">PERSONAJES</a>
+  <a href="fragmentos.html">FRAGMENTOS</a>
+  <a href="../index.html">NEXUS</a>
+</section>
+
+<!-- TEXTO FINAL -->
+<section class="lore-note">
+  <p>
+    Algunos cantos despiertan aquello que duerme.<br>
+    Otros solo existen para recordar que el mundo
+    fue construido sobre ruinas más antiguas que los dioses.
+  </p>
+</section>
+
+<!-- PIE -->
+<footer>
+  Cantus Alarum Nigrarum · Archivo del Obsidian Nexus
+</footer>
+
+</body>
+</html>
