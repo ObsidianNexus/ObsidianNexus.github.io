@@ -5,18 +5,11 @@
 <title>Cantus Alarum Nigrarum</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Tipografía ceremonial -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* BASE */
 body {
   font-family: 'Cinzel', serif;
   color: #d6c08a;
@@ -27,7 +20,6 @@ body {
   flex-direction: column;
 }
 
-/* Velo oscuro */
 body::before {
   content: "";
   position: fixed;
@@ -36,7 +28,6 @@ body::before {
   z-index: -1;
 }
 
-/* CABECERA */
 header {
   padding: 70px 20px 40px;
   text-align: center;
@@ -48,7 +39,6 @@ header img {
   animation: fadeIn 3s ease forwards;
 }
 
-/* MANIFIESTO */
 .manifest {
   max-width: 780px;
   margin: 0 auto 70px;
@@ -60,7 +50,6 @@ header img {
   animation: fadeIn 4s ease forwards;
 }
 
-/* SECCIONES */
 .sections {
   display: flex;
   flex-direction: column;
@@ -68,7 +57,6 @@ header img {
   margin-bottom: 70px;
 }
 
-/* BOTONES RITUALES */
 .sections a {
   width: 280px;
   margin: 0 auto;
@@ -98,7 +86,6 @@ header img {
   box-shadow: 0 0 22px rgba(214,192,138,0.35);
 }
 
-/* DESCRIPCIÓN INFERIOR */
 .lore-note {
   max-width: 720px;
   margin: 0 auto 60px;
@@ -110,7 +97,6 @@ header img {
   opacity: 0.85;
 }
 
-/* FOOTER */
 footer {
   margin-top: auto;
   text-align: center;
@@ -120,29 +106,23 @@ footer {
   color: #8a7a4a;
 }
 
-/* ANIMACIÓN */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* RESPONSIVE */
 @media (max-width: 600px) {
-  header img {
-    max-width: 300px;
-  }
+  header img { max-width: 300px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- CABECERA -->
 <header>
   <img src="assets/logo-cantus.png" alt="Cantus Alarum Nigrarum">
 </header>
 
-<!-- MANIFIESTO CENTRAL -->
 <section class="manifest">
   <p>
     <strong>Cantus Alarum Nigrarum</strong> no es una historia narrada para ser comprendida.<br>
@@ -153,25 +133,26 @@ footer {
   </p>
 </section>
 
-<!-- ACCESOS CANÓNICOS -->
 <section class="sections">
   <a href="cosmologia.html">COSMOLOGÍA</a>
-  <a href="cronologia.html">CRONOLOGÍA</a>
-  <a href="personajes.html">PERSONAJES</a>
-  <a href="fragmentos.html">FRAGMENTOS</a>
+  <a href="escalas.html">ESCALAS DE PODER</a>
+  <a href="personajes/">PERSONAJES</a>
+  <a href="facciones/">FACCIONES</a>
   <a href="../index.html">NEXUS</a>
 </section>
 
-<!-- TEXTO FINAL -->
 <section class="lore-note">
   <p>
+    Archivo de solo lectura. La fuente canónica vive en Notion<br>
+    y se refleja aquí de forma automática.
+  </p>
+  <p style="margin-top:1rem">
     Algunos cantos despiertan aquello que duerme.<br>
-    Otros solo existen para recordar que el mundo
+    Otros solo existen para recordar que el mundo<br>
     fue construido sobre ruinas más antiguas que los dioses.
   </p>
 </section>
 
-<!-- PIE -->
 <footer>
   Cantus Alarum Nigrarum · Archivo del Obsidian Nexus
 </footer>
